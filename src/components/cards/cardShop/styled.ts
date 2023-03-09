@@ -21,17 +21,24 @@ export const ContainerImage = styled.div`
 `;
 
 export const ContainerDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 40%;
-  padding: 7% 5%;
+  padding: 0 7%;
 
   h1 {
-    font-size: 30px;
+    font-size: 26px;
     color: #fff;
     font-weight: bold;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   p {
-    font-size: 20px;
+    font-size: 16px;
     color: #f4f4f4;
   }
 `;
