@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RootState } from "../../../store/store";
 import { Container, ContainerDisplay, DisplayCount } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  changeBanner,
-  changeBannerAuto,
-} from "../../../store/slices/bannerSlice";
+import { changeBannerAuto } from "../../../store/slices/bannerSlice";
 
 import banner1 from "../../../assets/banner1.png";
 import banner2 from "../../../assets/banner2.png";
@@ -17,46 +14,21 @@ export const BannerHome: React.FC = () => {
     (state: RootState) => state.banner.position
   );
   const dispatch = useDispatch();
-  const [banners, setBanners] = useState<any>([
-    banner1,
-    banner2,
-    banner3,
-    banner4,
-  ]);
+  const [banners] = useState<any>([banner1, banner2, banner3, banner4]);
 
-  var timeout = setTimeout(() => dispatch(changeBannerAuto()), 15000);
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(changeBannerAuto());
+    }, 10000);
+  });
 
   return (
     <Container background={banners[bannerPosition]}>
       <ContainerDisplay>
-        <DisplayCount
-          position={bannerPosition === 0 ? true : false}
-          onClick={() => {
-            clearTimeout(timeout);
-            dispatch(changeBanner(0));
-          }}
-        />
-        <DisplayCount
-          position={bannerPosition === 1 ? true : false}
-          onClick={() => {
-            clearTimeout(timeout);
-            dispatch(changeBanner(1));
-          }}
-        />
-        <DisplayCount
-          position={bannerPosition === 2 ? true : false}
-          onClick={() => {
-            clearTimeout(timeout);
-            dispatch(changeBanner(2));
-          }}
-        />
-        <DisplayCount
-          position={bannerPosition === 3 ? true : false}
-          onClick={() => {
-            clearTimeout(timeout);
-            dispatch(changeBanner(3));
-          }}
-        />
+        <DisplayCount position={bannerPosition === 0 ? true : false} />
+        <DisplayCount position={bannerPosition === 1 ? true : false} />
+        <DisplayCount position={bannerPosition === 2 ? true : false} />
+        <DisplayCount position={bannerPosition === 3 ? true : false} />
       </ContainerDisplay>
     </Container>
   );

@@ -9,7 +9,12 @@ export const Container = styled.div`
   height: 300px;
   margin: 1rem;
   background-color: #444;
-  border-radius: 20px;
+  border-radius: 10px;
+
+  :hover {
+    scale: 1.05;
+    transition: 500ms;
+  }
 `;
 
 export const ContainerImage = styled.div`
@@ -17,10 +22,10 @@ export const ContainerImage = styled.div`
   height: 60%;
   background-image: url(${teste});
   background-size: cover;
-  border-radius: 20px 20px 0 0;
+  border-radius: 7px 7px 0 0;
 `;
 
-export const ContainerDescription = styled.div`
+export const ContainerDescription = styled.div<any>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,6 +45,20 @@ export const ContainerDescription = styled.div`
   p {
     font-size: 16px;
     color: #f4f4f4;
+    text-decoration: ${({ discount }) => (discount ? "line-through" : "none")};
+    opacity: ${({ discount }) => (discount ? "80%" : "100%")};
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    h5 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #f4f4f4;
+    }
   }
 `;
 

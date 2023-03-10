@@ -8,6 +8,7 @@ export const Container = styled.div<any>`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  margin-top: 75px;
 `;
 
 export const ContainerDisplay = styled.div`

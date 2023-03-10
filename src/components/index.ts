@@ -5,3 +5,5 @@ export * from "./inputs/search";
 export * from "./inputs/select";
 export * from "./cards/cardShop";
 export * from "./banners/bannerHome";
+export * from "./banners/bannerOffer";
+export * from "./sections/sectionRecommended";

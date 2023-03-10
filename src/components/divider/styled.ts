@@ -5,6 +5,7 @@ interface IProps {
   width?: number | string;
   color?: string;
   margin?: string;
+  borderRadius?: string;
 }
 
 export const DividerContainer = styled.div<IProps>`
@@ -15,4 +16,5 @@ export const DividerContainer = styled.div<IProps>`
   }};
   background-color: ${({ color }) => (color ? color : "#fff")};
   margin: ${({ margin }) => (margin ? margin : "0")};
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "0")};
 `;

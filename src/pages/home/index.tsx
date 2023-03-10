@@ -6,7 +6,8 @@ export const Home: React.FC = () => {
     <>
       <Components.Header />
       <Components.BannerHome />
-      <Components.CardShop />
+      <Components.BannerOffer />
+      <Components.SectionRecommended />
       <Components.Footer />
     </>
   );

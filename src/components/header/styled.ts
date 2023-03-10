@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface IContainerSeparator {
+  width?: string;
+}
+
 export const Container = styled.div`
   width: 100%;
   height: 75px;
@@ -7,5 +11,19 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  position: fixed;
+  z-index: 999;
+  top: 0%;
+`;
+
+export const ContainerSeparator = styled.div<IContainerSeparator>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: ${({ width }) => (width ? width : "auto")};
+
+  h3 {
+    color: #f4f4f4;
+  }
 `;
